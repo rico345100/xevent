@@ -2,7 +2,7 @@
 Cross browsing JavaScript event handler
 
 ## Q. Supports?
-A. Support major web browsers and IE8-11
+A. Support major web browsers and IE6-11
 
 ## Q. License?
 A. Free to use.
