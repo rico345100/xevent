@@ -14,15 +14,15 @@ A. Free to use.
 
 2. use xEvent object.
 
-'''javascript
+```javascript
   xEvent.on(window, 'click', function() {
     alert('Window clicked!');
   });
-'''
+```
 
 ## Use like native with extend method
 
-'''javascript
+```javascript
   var someElem = xEvent.extend( document.getElementById('someElem') );
   
   // use like native dom api
@@ -32,7 +32,7 @@ A. Free to use.
   someElem.event.on('click', function() {
     this.innerText = 'World!';
   });
-'''
+```
 
 
 ## Methods
