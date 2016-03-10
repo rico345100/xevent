@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>xEvent - Light weight X-browsing event handler</title>
+</head>
+<body>
+	<h1>Plain usage of xEvent</h1>
+	
+	<button id="button">Click me!</button>
+	<input id="text" value="" />
+	<br />
+	
+	<h1>Extend usage</h1>
+	
+	<button id="button2">Click me too!</button>
+	<input id="text2" value="" />
+	
+	<script src="xevent.js"></script>
+	<script>
+		
+		// plain usage
+		var btn = document.getElementById('button');
+		var text = document.getElementById('text'); 
+		
+		xEvent.on(btn, 'click', function() {
+			text.value = 'Helloworld!';
+		});
+		
+		// extend usage
+		// extend method makes you handle xEvent as native DOM API
+		var btn2 = xEvent.extend( document.getElementById('button2') );
+		var text2 = document.getElementById('text2');
+		
+		btn2.event.on('click', function() {
+			text2.value = 'Farewell!';
+		});
+		
+	</script>
+</body>
+</html>
