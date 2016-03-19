@@ -184,20 +184,32 @@
 			}
 		},
 		extend: function(elem) {
-			elem.event = {
-				on: function(name, fn) {
-					xEvent.on(elem, name, fn);
-				},
-				off: function(name, fn) {
-					xEvent.off(elem, name, fn);
-				},
-				fire: function(name, e) {
-					xEvent.fire(elem, name, e);
-				},
-				trigger: function(name, e) {
-					xEvent.trigger(elem, name, e);
+			function addXEvent(elem) {
+				elem.event = {
+					on: function(name, fn) {
+						xEvent.on(elem, name, fn);
+					},
+					off: function(name, fn) {
+						xEvent.off(elem, name, fn);
+					},
+					fire: function(name, e) {
+						xEvent.fire(elem, name, e);
+					},
+					trigger: function(name, e) {
+						xEvent.trigger(elem, name, e);
+					}
+				};	
+			}
+			
+			// is node list?
+			if(elem.length) {
+				for(var i = 0, len = elem.length; i < len; i++) {
+					addXEvent(elem[i]);
 				}
-			};
+			}
+			else {
+				addXEvent(elem);
+			}
 			
 			return elem;
 		},
